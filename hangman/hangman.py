@@ -18,23 +18,24 @@ import random
 
 # instantiate a word list and choose a random word
 word_list = ["ardvark", "baboon", "camel"]
-chosen_word = word_list[random.randint(0, len(word_list) - 1)]
+chosen_word = random.choice(word_list)
 
-# change word into a string of chars
-chosen_word_list = []
-for char in chosen_word:
-    chosen_word_list += char
-
-print(chosen_word_list)
+print(f'Pssst, the solution is {chosen_word}.')
 
 # take the user input for their guess and compare to chosen_word
 guess = input("Guess a letter: ").lower()
-lives_count = 0
 
-for char in chosen_word_list:
-    if guess == char:
-        print("TRUE")
+lives_count = 0 
+display = []
+
+for i in range(len(chosen_word)):
+    display += "_"
+
+for position in range(len(chosen_word)):
+    letter = chosen_word[position]
+    if letter == guess:
+        display[position] = letter
     else:
         print("FALSE")
 
-
+print(display)
