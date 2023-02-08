@@ -28,6 +28,8 @@ guess = input("Guess a letter: ").lower()
 lives_count = 0 
 display = []
 
+#test
+
 for i in range(len(chosen_word)):
     display += "_"
 
